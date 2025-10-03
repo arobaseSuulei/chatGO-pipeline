@@ -14,5 +14,17 @@ services:
       - pgdata:/var/lib/postgresql/data
     restart: unless-stopped  # redémarre automatiquement si crash
 
+  notebook:
+    build: .
+    ports:
+      - "8888:8888"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
 volumes:
   pgdata:
+
+
+# ce fichier permettra de lancer la BDD postgresql automatiquement : docker-compose up -d
