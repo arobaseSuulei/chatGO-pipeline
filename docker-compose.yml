@@ -27,4 +27,4 @@ volumes:
   pgdata:
 
 
-# ce fichier permettra de lancer la BDD postgresql automatiquement : docker-compose up -d
+# ce fichier permettra de lancer toute l'app automatiquement sans rien configurer : docker-compose up -d
