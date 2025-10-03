@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_USER: chatgouser
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: chatgo
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped  # redémarre automatiquement si crash
+
+volumes:
+  pgdata:
